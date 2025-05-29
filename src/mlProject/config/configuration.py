@@ -1,7 +1,10 @@
 from mlProject.constant import *
 from mlProject.utils.common import read_yaml, create_directories
-from mlProject.entity.config_entity import (DataIngestionConfig,
-                                            DataValidationConfig)
+from mlProject.entity.config_entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+    DataTransformationConfig  # ✅ Import this
+)
 from pathlib import Path
 
 class ConfigurationManager:
@@ -19,7 +22,6 @@ class ConfigurationManager:
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config['data_ingestion']
-
         create_directories([Path(config['root_dir'])])
 
         return DataIngestionConfig(
@@ -28,17 +30,25 @@ class ConfigurationManager:
             local_data_file=Path(config['local_data_file']),
             unzip_dir=Path(config['unzip_dir'])
         )
+
     def get_data_validation_config(self) -> DataValidationConfig:
-        config = self.config.data_validation
-        schema = self.schema.COLUMNS
+        config = self.config['data_validation']
+        schema = self.schema['COLUMNS']
+        create_directories([Path(config['root_dir'])])
 
-        create_directories([config.root_dir])
-
-        data_validation_config = DataValidationConfig(
-            root_dir=config.root_dir,
-            STATUS_FILE=config.STATUS_FILE,
-            unzip_data_dir = config.unzip_data_dir,
+        return DataValidationConfig(
+            root_dir=Path(config['root_dir']),
+            STATUS_FILE=Path(config['STATUS_FILE']),
+            unzip_data_dir=Path(config['unzip_data_dir']),
             all_schema=schema,
         )
 
-        return data_validation_config
+    # ✅ ADD THIS METHOD
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir'])])
+
+        return DataTransformationConfig(
+            root_dir=Path(config['root_dir']),
+            data_path=Path(config['data_path'])
+        )

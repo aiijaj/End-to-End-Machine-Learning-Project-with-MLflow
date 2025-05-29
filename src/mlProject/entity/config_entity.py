@@ -14,3 +14,10 @@ class DataValidationConfig:
     STATUS_FILE:str
     unzip_data_dir:Path
     all_schema:dict
+
+# entity/config_entity.py
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    data_path: Path
+    root_dir: Path
