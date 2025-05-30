@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/End-to-End-Machine-Learning-Project-with-MLflow/mlruns/0/ab7f7accec9d4c408dba01a4e45528ea/artifacts
+end_time: 1748580994627
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ab7f7accec9d4c408dba01a4e45528ea
+run_name: adorable-yak-355
+run_uuid: ab7f7accec9d4c408dba01a4e45528ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748580985846
+status: 3
+tags: []
+user_id: ASUS
