@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/End-to-End-Machine-Learning-Project-with-MLflow/mlruns/0/13505ab080b1418b98c9d20c06f44851/artifacts
+end_time: 1748583230997
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 13505ab080b1418b98c9d20c06f44851
+run_name: chill-ray-145
+run_uuid: 13505ab080b1418b98c9d20c06f44851
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748583227097
+status: 3
+tags: []
+user_id: ASUS
